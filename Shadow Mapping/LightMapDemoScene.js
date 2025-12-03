@@ -407,14 +407,7 @@ LightMapDemoScene.prototype._Update = function (dt) {
 		this.camera.rotateRight(dt / 1000 * this.RotateSpeed);
 	}
 
-	this.lightDisplacementInputAngle += dt / 2337;
-	var xDisplacement = Math.sin(this.lightDisplacementInputAngle) * 2.8;
-
-	this.LightMesh.world[12] = xDisplacement;
-	for (var i = 0; i < this.shadowMapCameras.length; i++) {
-		mat4.getTranslation(this.shadowMapCameras[i].position, this.LightMesh.world);
-		this.shadowMapCameras[i].GetViewMatrix(this.shadowMapViewMatrices[i]);
-	}
+	
 
 	this.camera.GetViewMatrix(this.viewMatrix);
 };
